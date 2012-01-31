@@ -11,6 +11,25 @@ Primary Class Library
 =====================
 * dramaqueen.php
 
+Implementing in your Code
+=========================
+1. Include the dramaqueen.php library:
+	
+	include_once 'utilities/dramaqueen.php';
+2. Create an instance of the kenai class:
+	
+	$obfuscator = new kenai();
+
+3. Pass the code you want encoded to the lesda_encoder:
+
+	$data_result = $obfuscator->lesda_encoder("document.write('9b+');");
+
+4. Pass the result of lesda to the hilma_encoder:
+
+	$data_result = $obfuscator->hilma_encoder($data_result);
+
+5. Return the result to the user (you need to wrap it in script tags)
+
 redgift
 =======
 Demonstration of encoder with static AJAX url used for processing
