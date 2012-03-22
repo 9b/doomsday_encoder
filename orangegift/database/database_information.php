@@ -1,6 +1,6 @@
 <?php
-$host="YOUR_HOST";
-$username="USER";
-$password="PASSWORD";
-$db_name="DB_NAME";
+$host="localhost";
+$username="root";
+$password="password";
+$db_name="minxla";
 ?>

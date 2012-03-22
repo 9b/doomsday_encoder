@@ -441,8 +441,8 @@ class kenai {
 		$key = $this->gen_key();
 		$seed = $this->gen_seed($key);
 		$encoded = $this->calc_val($seed,$code,$this->out);
-		$payload = "";
-		$payload = join("",$encoded);
+		$tmp = "";
+		$tmp = join("",$encoded);
 		$this->cleaner($tmp);
 		$rnd_nm_crypt = $this->var_holder;
 		$clean_encoded = $this->get_full_blob();
