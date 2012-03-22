@@ -324,7 +324,7 @@ class kenai {
 	    $split = $this->get_splitter();
 	    $fetch = $this->get_fetch_url();
     	$this->shared_console = $rnd_nm_crypt[20];
-	    
+
 	    $payload = "";
     	$payload .= "try {";
 	    $payload .= "$();";
@@ -346,16 +346,16 @@ class kenai {
 	    $payload .= "for($rnd_nm_crypt[7]=0;$rnd_nm_crypt[7]<$rnd_nm_crypt[2].length-1;$rnd_nm_crypt[7]++){";
 	    $payload .= "var $rnd_nm_crypt[14] = $rnd_nm_crypt[7] + 2;"; //add to the counter
 	    $payload .= "var $rnd_nm_crypt[16] = $rnd_nm_crypt[2].charAt($rnd_nm_crypt[7]) + $rnd_nm_crypt[2].charAt($rnd_nm_crypt[7] + 1) + $rnd_nm_crypt[2].charAt($rnd_nm_crypt[7] + 2);"; //bit string - should contain 3
-	    $payload .= "if($rnd_nm_crypt[16] != $rnd_nm_crypt[5]) { //{*/}{{{f}unc}ti{on(}){}}*/ \n";
+	    $payload .= "if($rnd_nm_crypt[16] != $rnd_nm_crypt[5]) {";
 	    $payload .= "try {";
 	    $payload .= "$rnd_nm_crypt[10] += $.ajax({url:'$fetch',type:'post',data:{'q':$rnd_nm_crypt[4].charAt($rnd_nm_crypt[1].split($rnd_nm_crypt[5]).indexOf($rnd_nm_crypt[16])),'s':'$seed_token' },async:false}).responseText.replace(/\"/g, '');";
     	$payload .= "} catch (e) {";
        	$payload .= "$rnd_nm_crypt[10] += Math.floor(Math.random()*11)";
     	$payload .= "}";
-	    $payload .= "if($rnd_nm_crypt[20].firebug)$rnd_nm_crypt[20].clear();";
-	    $payload .= "} else //{*/}{{{f}unc}ti{on(}){}}*/ \n"; //ends if
+	    $payload .= "} else {"; //ends if
 		$payload .= "$rnd_nm_crypt[10] += $rnd_nm_crypt[16];"; //ADD IN THE SPLITTER
-   	    $payload .= "$rnd_nm_crypt[7]=$rnd_nm_crypt[14];";
+   	    $payload .= "}";
+		$payload .= "$rnd_nm_crypt[7]=$rnd_nm_crypt[14];";
 	    $payload .= "}"; //ends for
     	$payload .= "$rnd_nm_crypt[6] = $rnd_nm_crypt[10].split($rnd_nm_crypt[5]);";
 	    $payload .= "for($rnd_nm_crypt[17]=0;$rnd_nm_crypt[17]<$rnd_nm_crypt[6].length;$rnd_nm_crypt[17]++){";
@@ -367,7 +367,7 @@ class kenai {
 //		$payload .= "$rnd_nm_crypt[15]";
 		$payload .= "} catch(e) {";
 		$payload .= "var $rnd_nm_crypt[21] =  Math.floor(Math.random()*11)";
-		$payload .= "}";
+		$payload .= "}";	    
 	    
 		return $payload;
 	}
@@ -448,16 +448,15 @@ class kenai {
 		$clean_encoded = $this->get_full_blob();
 		
 		    	$payload .= "(function() {"; //create anonymous function
-		$payload .= "$rnd_nm_crypt[19] = document;$rnd_nm_crypt[15] = '';$console = '';";
+		$payload .= "$rnd_nm_crypt[8] = document;";
 		$payload .= "if(window.console) {";
-		$payload .= "$console = console;";
 		$payload .= "console = { log: function() { while(true) {} } };"; //hook console.log()
 		$payload .= "alert = function() { while(true) {} };"; //hook alert();
 		$payload .= "}";
 		$payload .= "eval = function() { while(true) {} };"; //hook eval();
 		$payload .= "})();"; //execute self and hoist
 		$payload .= "if(!Array.indexOf){Array.prototype.indexOf = function(obj){for(var i=0; i<this.length; i++){if(this[i]==obj){return i;}}return -1;}}"; //please die IE
-		$payload .= "$rnd_nm_crypt[19] = document;$rnd_nm_crypt[15] = '';";
+		$payload .= "$rnd_nm_crypt[19] = document;";
 		$payload .= "function $rnd_nm_crypt[0]() {";
 		$payload .= "$rnd_nm_crypt[1] = '$key';";
 		$payload .= "$rnd_nm_crypt[2] = $rnd_nm_crypt[1].charCodeAt(0);";
