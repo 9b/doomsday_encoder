@@ -47,3 +47,7 @@ greengift
 Demonstration of encoder contents delivered through AJAX
 
 Live Example: www.9bplus.com/greengift/index.php?token=<token displayed on the landing page>
+
+orangegift
+==========
+Demonstration of exta encoder (rolling modulus) wrapping AJAX secondary payload
